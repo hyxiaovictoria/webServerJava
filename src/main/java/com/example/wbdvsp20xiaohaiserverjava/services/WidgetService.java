@@ -44,6 +44,5 @@ public class WidgetService {
 
     public Widget findWidgetById(int wid) {
         return widgetRepository.findWidgetById(wid);
-//        return widgetRepository.findById(wid).get();
     }
 }
