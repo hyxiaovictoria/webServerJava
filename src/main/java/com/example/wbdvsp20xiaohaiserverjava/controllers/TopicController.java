@@ -50,21 +50,4 @@ public class TopicController {
     public Topic findTopicById(@PathVariable("topicId") int tid) {
         return topicService.findTopicById(tid);
     }
-
-//    // DO NOT USE THIS - ONLY FOR ACADEMIC PURPOSE
-//    @GetMapping("/api/topics/{tid}/widgets/create")
-//    public Widget createWidgetForTopicBad(
-//            @PathVariable("tid") Integer tid) {
-//        Widget newWidget = new Widget();
-//        newWidget.setTitle("Dont do this");
-//        newWidget.setSize(111);
-//        return topicService.createWidgetForTopic(tid, newWidget);
-//    }
-//
-//    @PostMapping("/api/topics/{tid}/widgetseee")
-//    public Widget createWidgetForTopic(
-//            @PathVariable("tid") Integer tid,
-//            @RequestBody Widget newWidget) {
-//        return topicService.createWidgetForTopic(tid, newWidget);
-//    }
 }
