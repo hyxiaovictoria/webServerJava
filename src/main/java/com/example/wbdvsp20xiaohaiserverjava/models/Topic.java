@@ -10,6 +10,7 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
+    private String description;
     private String lessonId;
 
     @OneToMany(mappedBy = "topic")
@@ -37,6 +38,14 @@ public class Topic {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public List<Widget> getWidgets() {
