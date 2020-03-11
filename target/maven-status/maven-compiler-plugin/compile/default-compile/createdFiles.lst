@@ -1,0 +1,9 @@
+com/example/wbdvonlinesp20serverjava/controllers/TopicController.class
+com/example/wbdvonlinesp20serverjava/services/TopicService.class
+com/example/wbdvonlinesp20serverjava/models/Widget.class
+com/example/wbdvonlinesp20serverjava/services/WidgetService.class
+com/example/wbdvonlinesp20serverjava/DemoApplication.class
+com/example/wbdvonlinesp20serverjava/repositories/TopicRepository.class
+com/example/wbdvonlinesp20serverjava/controllers/WidgetController.class
+com/example/wbdvonlinesp20serverjava/repositories/WidgetRepository.class
+com/example/wbdvonlinesp20serverjava/models/Topic.class
