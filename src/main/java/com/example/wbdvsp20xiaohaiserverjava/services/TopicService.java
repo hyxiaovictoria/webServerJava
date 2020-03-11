@@ -22,17 +22,24 @@ public class TopicService {
         return (List<Topic>)topicRepository.findAll();
     }
 
-    // TODO: implement findTopicById
     public Topic findTopicById(int tid) {
-        return null;
+        return topicRepository.findTopicById(tid);
     }
 
-    // TODO: delete topic
     public int deleteTopic(int tid) {
+        topicRepository.deleteById(tid);
         return 1;
     }
 
-    public int updateTopic(int tid, Topic newTopic) {
+    public int updateTopic(int tid, Topic updatedTopic) {
+        Topic oldTopic = topicRepository.findTopicById(tid);
+        oldTopic.setTitle(updatedTopic.getTitle());
+        oldTopic.setId(updatedTopic.getId());
+        oldTopic.setLessonId(updatedTopic.getLessonId());
+        oldTopic.setDescription(updatedTopic.getDescription());
+        oldTopic.setWidgets(updatedTopic.getWidgets());
+
+        topicRepository.save(oldTopic);
         return 1;
     }
 
