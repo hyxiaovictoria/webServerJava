@@ -30,6 +30,8 @@ public class WidgetService {
         Widget oldWidget = widgetRepository.findWidgetById(widgetId);
         oldWidget.setTitle(updatedWidget.getTitle());
         oldWidget.setSize(updatedWidget.getSize());
+        oldWidget.setIsInOrder(updatedWidget.getIsInOrder());
+
         widgetRepository.save(oldWidget);
         return 1;
     }

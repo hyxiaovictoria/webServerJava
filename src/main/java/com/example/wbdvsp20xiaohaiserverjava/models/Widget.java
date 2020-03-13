@@ -9,13 +9,14 @@ import javax.persistence.*;
 public class Widget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String title = "New Widget";
+    private int size = 2;
+    private int isInOrder = 1;
+
     private String type = "HEADING";
     private String text = "New Widget";
-    private int order;
     private String src, url, href;
-    private int size = 2;
     private int width, height;
     private String cssClass;
     private String style;
@@ -24,30 +25,6 @@ public class Widget {
     @ManyToOne
     @JsonIgnore
     private Topic topic;
-
-    public Topic getTopic() {
-        return topic;
-    }
-
-    public void setTopic(Topic topic) {
-        this.topic = topic;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
 
     public int getId() {
         return id;
@@ -65,6 +42,30 @@ public class Widget {
         this.title = title;
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
+    public int getIsInOrder() {
+        return isInOrder;
+    }
+
+    public void setIsInOrder(int isInOrder) {
+        this.isInOrder = isInOrder;
+    }
+
     public String getType() {
         return type;
     }
@@ -73,12 +74,12 @@ public class Widget {
         this.type = type;
     }
 
-    public int getOrder() {
-        return order;
+    public String getText() {
+        return text;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getSrc() {
