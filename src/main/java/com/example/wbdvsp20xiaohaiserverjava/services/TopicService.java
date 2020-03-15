@@ -22,16 +22,16 @@ public class TopicService {
         return (List<Topic>)topicRepository.findAll();
     }
 
-    public Topic findTopicById(int tid) {
+    public Topic findTopicById(Integer tid) {
         return topicRepository.findTopicById(tid);
     }
 
-    public int deleteTopic(int tid) {
+    public int deleteTopic(Integer tid) {
         topicRepository.deleteById(tid);
         return 1;
     }
 
-    public int updateTopic(int tid, Topic updatedTopic) {
+    public int updateTopic(Integer tid, Topic updatedTopic) {
         Topic oldTopic = topicRepository.findTopicById(tid);
         oldTopic.setTitle(updatedTopic.getTitle());
         oldTopic.setDescription(updatedTopic.getDescription());
@@ -47,9 +47,14 @@ public class TopicService {
     public Widget createWidgetForTopic(
             Integer tid,
             Widget newWidget) {
-        Topic topic = topicRepository.findById(tid).get();
-        newWidget.setTopic(topic);
         return widgetRepository.save(newWidget);
+        //Topic topic = topicRepository.findById(tid).get();
+        //newWidget.setTopic(topic);
+        //return widgetRepository.save(createdWidget);
+
+//        Topic topic = topicRepository.findById(tid).get();
+//        newWidget.setTopic(topic);
+//        return widgetRepository.save(newWidget);
     }
 
     public List<Topic> findTopicsForLesson(String lessonId) {

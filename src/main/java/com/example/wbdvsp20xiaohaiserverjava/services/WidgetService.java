@@ -26,11 +26,23 @@ public class WidgetService {
         return widgetRepository.save(newWidget);
     }
 
-    public int updateWidget(int widgetId, Widget updatedWidget) {
+    public int updateWidget(Integer widgetId, Widget updatedWidget) {
         Widget oldWidget = widgetRepository.findWidgetById(widgetId);
+
         oldWidget.setTitle(updatedWidget.getTitle());
         oldWidget.setSize(updatedWidget.getSize());
         oldWidget.setIsInOrder(updatedWidget.getIsInOrder());
+        oldWidget.setType(updatedWidget.getType());
+        oldWidget.setText(updatedWidget.getText());
+        oldWidget.setSrc(updatedWidget.getSrc());
+        oldWidget.setUrl(updatedWidget.getUrl());
+        oldWidget.setHref(updatedWidget.getHref());
+
+        oldWidget.setWidth(updatedWidget.getWidth());
+        oldWidget.setHeight(updatedWidget.getHeight());
+        oldWidget.setCssClass(updatedWidget.getCssClass());
+        oldWidget.setStyle(updatedWidget.getStyle());
+        oldWidget.setValue(updatedWidget.getValue());
 
         widgetRepository.save(oldWidget);
         return 1;
@@ -40,11 +52,11 @@ public class WidgetService {
         return widgetRepository.findAllWidgets();
     }
 
-    public List<Widget> findWidgetsForTopic(int topicId) {
+    public List<Widget> findWidgetsForTopic(Integer topicId) {
         return widgetRepository.findWidgetsForTopic(topicId);
     }
 
-    public Widget findWidgetById(int wid) {
+    public Widget findWidgetById(Integer wid) {
         return widgetRepository.findWidgetById(wid);
     }
 }

@@ -14,7 +14,7 @@ public interface WidgetRepository
 
     @Query("SELECT widget FROM Widget widget WHERE widget.id=:widgetId")
     public Widget findWidgetById(
-            @Param("widgetId") int wid);
+            @Param("widgetId") Integer wid);
 
     @Query("SELECT widget FROM Widget widget")
     public List<Widget> findAllWidgets();
@@ -23,5 +23,5 @@ public interface WidgetRepository
 //    @Query(value = "SELECT * FROM widgets WHERE topic_id=:tid", nativeQuery = true)
     @Query("select widget from Widget widget where widget.topic.id=:tid")
     public List<Widget> findWidgetsForTopic(
-            @Param("tid") int topicId);
+            @Param("tid") Integer topicId);
 }

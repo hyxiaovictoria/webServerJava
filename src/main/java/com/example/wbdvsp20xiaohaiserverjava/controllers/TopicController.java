@@ -31,13 +31,13 @@ public class TopicController {
     }
 
     @PutMapping("/api/topics/{tid}")
-    public int updateTopic(@PathVariable("tid") int topicId,
+    public int updateTopic(@PathVariable("tid") Integer topicId,
                             @RequestBody Topic topic) {
         return topicService.updateTopic(topicId, topic);
     }
 
     @DeleteMapping("/api/topics/{tid}")
-    public int deleteTopic(@PathVariable("tid") int topicId) {
+    public int deleteTopic(@PathVariable("tid") Integer topicId) {
         return topicService.deleteTopic(topicId);
     }
 
@@ -47,7 +47,7 @@ public class TopicController {
     }
 
     @GetMapping("/api/topics/{topicId}")
-    public Topic findTopicById(@PathVariable("topicId") int tid) {
+    public Topic findTopicById(@PathVariable("topicId") Integer tid) {
         return topicService.findTopicById(tid);
     }
 }

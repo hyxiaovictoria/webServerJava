@@ -10,14 +10,15 @@ public class Widget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String title = "New Widget";
-    private int size = 2;
-    private int isInOrder = 1;
+    private String title;
+    private Integer size;
+    private Integer isInOrder;
 
-    private String type = "HEADING";
-    private String text = "New Widget";
+    private String type;
+    private String text;
     private String src, url, href;
-    private int width, height;
+    private Integer width;
+    private Integer height;
     private String cssClass;
     private String style;
     private String value;
@@ -26,11 +27,11 @@ public class Widget {
     @JsonIgnore
     private Topic topic;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,7 +47,7 @@ public class Widget {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -58,11 +59,11 @@ public class Widget {
         this.topic = topic;
     }
 
-    public int getIsInOrder() {
+    public Integer getIsInOrder() {
         return isInOrder;
     }
 
-    public void setIsInOrder(int isInOrder) {
+    public void setIsInOrder(Integer isInOrder) {
         this.isInOrder = isInOrder;
     }
 
@@ -106,19 +107,19 @@ public class Widget {
         this.href = href;
     }
 
-    public int getWidth() {
+    public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(Integer width) {
         this.width = width;
     }
 
-    public int getHeight() {
+    public Integer getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(Integer height) {
         this.height = height;
     }
 
