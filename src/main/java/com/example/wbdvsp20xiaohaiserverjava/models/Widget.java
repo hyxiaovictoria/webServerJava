@@ -11,8 +11,8 @@ public class Widget {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    private String name;
     private Integer size;
+    private String name;
     private Integer isInOrder;
 
     private String type;

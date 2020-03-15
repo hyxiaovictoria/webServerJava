@@ -47,14 +47,10 @@ public class TopicService {
     public Widget createWidgetForTopic(
             Integer tid,
             Widget newWidget) {
-        return widgetRepository.save(newWidget);
+        Topic topic = topicRepository.findTopicById(tid);
         //Topic topic = topicRepository.findById(tid).get();
-        //newWidget.setTopic(topic);
-        //return widgetRepository.save(createdWidget);
-
-//        Topic topic = topicRepository.findById(tid).get();
-//        newWidget.setTopic(topic);
-//        return widgetRepository.save(newWidget);
+        newWidget.setTopic(topic);
+        return widgetRepository.save(newWidget);
     }
 
     public List<Topic> findTopicsForLesson(String lessonId) {

@@ -19,6 +19,8 @@ public class WidgetController {
     @Autowired
     TopicService topicService;
 
+    // TODO: createWidgetForTopic must put "size" inside object widget, otherwise 500 internal error.
+    // Need fix.
     @PostMapping("/api/topics/{topicId}/widgets")
     public Widget createWidget(
             @PathVariable("topicId") Integer topicId,
