@@ -34,10 +34,7 @@ public class TopicService {
     public int updateTopic(int tid, Topic updatedTopic) {
         Topic oldTopic = topicRepository.findTopicById(tid);
         oldTopic.setTitle(updatedTopic.getTitle());
-        oldTopic.setId(updatedTopic.getId());
-        oldTopic.setLessonId(updatedTopic.getLessonId());
         oldTopic.setDescription(updatedTopic.getDescription());
-        oldTopic.setWidgets(updatedTopic.getWidgets());
 
         topicRepository.save(oldTopic);
         return 1;
