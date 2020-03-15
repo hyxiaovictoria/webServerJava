@@ -1,5 +1,6 @@
 package com.example.wbdvsp20xiaohaiserverjava.controllers;
 
+import com.example.wbdvsp20xiaohaiserverjava.models.Topic;
 import com.example.wbdvsp20xiaohaiserverjava.models.Widget;
 import com.example.wbdvsp20xiaohaiserverjava.services.TopicService;
 import com.example.wbdvsp20xiaohaiserverjava.services.WidgetService;
@@ -13,7 +14,7 @@ import java.util.List;
 public class WidgetController {
 
     @Autowired
-    WidgetService service;
+    WidgetService widgetService;
 
     @Autowired
     TopicService topicService;
@@ -27,27 +28,27 @@ public class WidgetController {
 
     @GetMapping("/api/topics/{tid}/widgets")
     public List<Widget> findWidgetsForTopic(@PathVariable("tid") int tid) {
-        return service.findWidgetsForTopic(tid);
+        return widgetService.findWidgetsForTopic(tid);
     }
 
     @PutMapping("/api/widgets/{wid}")
     public int updateWidget(@PathVariable("wid") int widgetId,
                             @RequestBody Widget widget) {
-        return service.updateWidget(widgetId, widget);
+        return widgetService.updateWidget(widgetId, widget);
     }
 
     @DeleteMapping("/api/widgets/{wid}")
     public int deleteWidget(@PathVariable("wid") int widgetId) {
-        return service.deleteWidget(widgetId);
+        return widgetService.deleteWidget(widgetId);
     }
 
     @GetMapping("/api/widgets")
     public List<Widget> findAllWidgets() {
-        return service.findAllWidgets();
+        return widgetService.findAllWidgets();
     }
 
     @GetMapping("/api/widgets/{widgetId}")
     public Widget findWidgetById(@PathVariable("widgetId") int wid) {
-        return service.findWidgetById(wid);
+        return widgetService.findWidgetById(wid);
     }
 }
