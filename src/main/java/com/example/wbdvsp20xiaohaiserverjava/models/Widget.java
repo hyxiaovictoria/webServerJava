@@ -11,6 +11,7 @@ public class Widget {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
+    private String name;
     private Integer size;
     private Integer isInOrder;
 
@@ -41,6 +42,14 @@ public class Widget {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getSize() {
